@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>298167213097-ce981vtfims5paohhutctro0u3os2aa4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.298167213097-ce981vtfims5paohhutctro0u3os2aa4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAfIYjFOFMsl_lVN-TU6ipVuHGhx04HDsU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>298167213097</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.codewalla.parent-tablet</string>
+	<key>PROJECT_ID</key>
+	<string>parent-tablet-test</string>
+	<key>STORAGE_BUCKET</key>
+	<string>parent-tablet-test.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:298167213097:ios:7d55a50b317e02b5509038</string>
+	<key>DATABASE_URL</key>
+	<string>https://parent-tablet-test.firebaseio.com</string>
+</dict>
+</plist>

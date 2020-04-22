@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="100" id="KGk-i7-Jjw" customClass="EventCell" customModule="parent_tablet" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="450" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn6-Va-kEx">
+                        <rect key="frame" x="10" y="10" width="430" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-jo-1wW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="3dU-Sd-fgH"/>
+                                    <constraint firstAttribute="width" constant="320" id="nVj-LP-I8c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sk-JJ-qtL">
+                                <rect key="frame" x="320" y="0.0" width="110" height="80"/>
+                                <color key="backgroundColor" red="0.60574042800000005" green="0.11049894239999999" blue="0.1215385571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <color key="tintColor" red="0.60574042800000005" green="0.11049894239999999" blue="0.1215385571" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="DeleteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ziu-7a-WuS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="0sk-JJ-qtL" secondAttribute="bottom" id="H41-rz-p2G"/>
+                            <constraint firstItem="0sk-JJ-qtL" firstAttribute="top" secondItem="zn6-Va-kEx" secondAttribute="top" id="K5t-JV-GbM"/>
+                            <constraint firstItem="0sk-JJ-qtL" firstAttribute="leading" secondItem="sgy-jo-1wW" secondAttribute="trailing" id="eUj-HD-5Sn"/>
+                            <constraint firstAttribute="trailing" secondItem="0sk-JJ-qtL" secondAttribute="trailing" id="poH-29-TgQ"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="zn6-Va-kEx" secondAttribute="bottom" constant="10" id="0vR-JA-zlO"/>
+                    <constraint firstAttribute="trailing" secondItem="zn6-Va-kEx" secondAttribute="trailing" constant="10" id="RtF-2t-lu5"/>
+                    <constraint firstItem="zn6-Va-kEx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aEt-Gj-qXW"/>
+                    <constraint firstItem="zn6-Va-kEx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="sne-sg-Mbg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="eventLabel" destination="sgy-jo-1wW" id="9Em-I0-YIh"/>
+            </connections>
+            <point key="canvasLocation" x="152.17391304347828" y="145.98214285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
