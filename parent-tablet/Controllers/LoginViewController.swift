@@ -34,7 +34,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        performExistingAccountSetupFlows()
+        //performExistingAccountSetupFlows()
+        startSigninWithAppleFlow()
     }
     
     @IBAction func GIDSignInButtonPressed(_ sender: GIDSignInButton) {
@@ -57,13 +58,13 @@ class LoginViewController: UIViewController {
     /// - Tag: add_appleid_button
     func setupProviderLoginView() {
         let authorizationButton = ASAuthorizationAppleIDButton()
-        authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        authorizationButton.addTarget(self, action: #selector(startSigninWithAppleFlow), for: .touchUpInside)
         self.appleLoginProviderStackView.addArrangedSubview(authorizationButton)
     }
     
     // - Tag: perform_appleid_password_request
     /// Prompts the user if an existing iCloud Keychain credential or Apple ID credential is found.
-    func performExistingAccountSetupFlows() {
+    /*func performExistingAccountSetupFlows() {
         // Prepare requests for both Apple ID and password providers.
         let requests = [ASAuthorizationAppleIDProvider().createRequest(),
                         ASAuthorizationPasswordProvider().createRequest()]
@@ -73,11 +74,11 @@ class LoginViewController: UIViewController {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-    }
+    }*/
     
     /// - Tag: perform_appleid_request
     @objc
-    func handleAuthorizationAppleIDButtonPress() {
+    func startSigninWithAppleFlow() {
         
         let nonce = randomNonceString()
         currentNonce = nonce
@@ -192,6 +193,16 @@ extension LoginViewController {
       }.joined()
 
       return hashString
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.loginSegue {
+            let destinationVC = segue.destination as! MainViewController
+            let currentUser = Auth.auth().currentUser
+            destinationVC.userName = currentUser?.displayName
+            destinationVC.userEmail = currentUser?.email
+            destinationVC.userPhone = currentUser?.phoneNumber
+        }
     }
     
 }

@@ -54,7 +54,7 @@ class CalendarViewController: UIViewController {
             self.datesWithEvents = []
             
             if let e = error {
-                print(e.localizedDescription)
+                print("\(e.localizedDescription) inside Calendar controller")
             }
             else {
                 if let snapshotDocuments = querySnapshot?.documents {

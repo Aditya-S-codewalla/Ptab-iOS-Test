@@ -11,10 +11,19 @@ import Firebase
 
 class MainViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
+    var userName:String?
+    var userEmail:String?
+    var userPhone:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationItem.hidesBackButton = true
+        DisplayUserDetails()
     }
     
     @IBAction func LogoutButtonPressed(_ sender: UIBarButtonItem) {
@@ -26,6 +35,12 @@ class MainViewController: UIViewController {
             print ("Error signing out: %@", signOutError)
         }
         
+    }
+    
+    func DisplayUserDetails() {
+        nameLabel.text = userName
+        emailLabel.text = userEmail
+        phoneLabel.text = userPhone
     }
     
 }
