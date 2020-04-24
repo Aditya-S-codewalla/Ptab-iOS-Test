@@ -18,6 +18,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var appleLoginProviderStackView: UIStackView!
     
+    var fullName:String?
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     fileprivate var currentNonce: String?
@@ -135,6 +137,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             }
             // User is signed in to Firebase with Apple.
             print("Apple Sign in success")
+            self.fullName = PersonNameComponentsFormatter.localizedString(from: appleIDCredential.fullName!, style: .default, options: .init())
             self.performSegue(withIdentifier: K.loginSegue, sender: self)
           }
         }
@@ -199,7 +202,8 @@ extension LoginViewController {
         if segue.identifier == K.loginSegue {
             let destinationVC = segue.destination as! MainViewController
             let currentUser = Auth.auth().currentUser
-            destinationVC.userName = currentUser?.displayName
+            //destinationVC.userName = currentUser?.displayName
+            destinationVC.userName = fullName
             destinationVC.userEmail = currentUser?.email
             destinationVC.userPhone = currentUser?.phoneNumber
         }
