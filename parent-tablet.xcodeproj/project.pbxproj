@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		616225FB245832EC0018BF57 /* SMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616225FA245832EB0018BF57 /* SMSViewController.swift */; };
+		616225FD24584DB40018BF57 /* ContactsDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616225FC24584DB40018BF57 /* ContactsDisplayController.swift */; };
+		616225FF24584E950018BF57 /* ContactStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616225FE24584E950018BF57 /* ContactStruct.swift */; };
 		6164F0C6244FC34F00F02A0E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6164F0C5244FC34F00F02A0E /* Event.swift */; };
 		6164F0CF244FD73600F02A0E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6164F0CD244FD73600F02A0E /* EventCell.swift */; };
 		6164F0D0244FD73600F02A0E /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6164F0CE244FD73600F02A0E /* EventCell.xib */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		062B112A3DF9A2E539921B26 /* Pods-parent-tablet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parent-tablet.release.xcconfig"; path = "Target Support Files/Pods-parent-tablet/Pods-parent-tablet.release.xcconfig"; sourceTree = "<group>"; };
 		53B3C76DAD6D00EA6B9CEDD1 /* Pods-parent-tablet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parent-tablet.debug.xcconfig"; path = "Target Support Files/Pods-parent-tablet/Pods-parent-tablet.debug.xcconfig"; sourceTree = "<group>"; };
+		616225FA245832EB0018BF57 /* SMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewController.swift; sourceTree = "<group>"; };
+		616225FC24584DB40018BF57 /* ContactsDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDisplayController.swift; sourceTree = "<group>"; };
+		616225FE24584E950018BF57 /* ContactStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStruct.swift; sourceTree = "<group>"; };
 		6164F0C5244FC34F00F02A0E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6164F0CD244FD73600F02A0E /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		6164F0CE244FD73600F02A0E /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 				61BF4C93244EECD9000D11EB /* MainViewController.swift */,
 				61BF4C95244EEFD1000D11EB /* CalendarViewController.swift */,
 				61BF4C97244EF019000D11EB /* EventViewController.swift */,
+				616225FA245832EB0018BF57 /* SMSViewController.swift */,
+				616225FC24584DB40018BF57 /* ContactsDisplayController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				6164F0C5244FC34F00F02A0E /* Event.swift */,
+				616225FE24584E950018BF57 /* ContactStruct.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,13 +292,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				61BF4C8C244EE4A3000D11EB /* WelcomeViewController.swift in Sources */,
+				616225FF24584E950018BF57 /* ContactStruct.swift in Sources */,
 				61BF4C78244EE436000D11EB /* AppDelegate.swift in Sources */,
 				61BF4C7A244EE436000D11EB /* SceneDelegate.swift in Sources */,
+				616225FD24584DB40018BF57 /* ContactsDisplayController.swift in Sources */,
 				61BF4C94244EECD9000D11EB /* MainViewController.swift in Sources */,
 				6164F0C6244FC34F00F02A0E /* Event.swift in Sources */,
 				61BF4C92244EEA82000D11EB /* LoginViewController.swift in Sources */,
 				6164F0CF244FD73600F02A0E /* EventCell.swift in Sources */,
 				61BF4C98244EF019000D11EB /* EventViewController.swift in Sources */,
+				616225FB245832EC0018BF57 /* SMSViewController.swift in Sources */,
 				61BF4C96244EEFD1000D11EB /* CalendarViewController.swift in Sources */,
 				61BF4C90244EE7F3000D11EB /* RegisterViewController.swift in Sources */,
 				61BF4C9E244EFA25000D11EB /* Constants.swift in Sources */,

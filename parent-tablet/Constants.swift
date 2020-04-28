@@ -13,6 +13,7 @@ struct K {
     static let registerSegue = "RegisterToMain"
     static let loginSegue = "LoginToMain"
     static let CalendarEventSegue = "CalendarToEvent"
+    static let ContactsSegue = "Contacts"
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "EventCell"
     
