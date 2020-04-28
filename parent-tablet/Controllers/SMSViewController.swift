@@ -24,6 +24,7 @@ class SMSViewController: UIViewController, MFMessageComposeViewControllerDelegat
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        contacts = []
         phoneTextField.text = SMSViewController.phoneNumber
     }
     
