@@ -13,11 +13,9 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
     
     var userName:String?
     var userEmail:String?
-    var userPhone:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +38,6 @@ class MainViewController: UIViewController {
     func DisplayUserDetails() {
         nameLabel.text = userName
         emailLabel.text = userEmail
-        phoneLabel.text = userPhone
     }
     
 }

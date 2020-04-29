@@ -13,6 +13,7 @@
 		6164F0C6244FC34F00F02A0E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6164F0C5244FC34F00F02A0E /* Event.swift */; };
 		6164F0CF244FD73600F02A0E /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6164F0CD244FD73600F02A0E /* EventCell.swift */; };
 		6164F0D0244FD73600F02A0E /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6164F0CE244FD73600F02A0E /* EventCell.xib */; };
+		61B8B4AF2459D50200391587 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B8B4AE2459D50200391587 /* EmailViewController.swift */; };
 		61BF4C78244EE436000D11EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BF4C77244EE436000D11EB /* AppDelegate.swift */; };
 		61BF4C7A244EE436000D11EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BF4C79244EE436000D11EB /* SceneDelegate.swift */; };
 		61BF4C7F244EE436000D11EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61BF4C7D244EE436000D11EB /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		6164F0C5244FC34F00F02A0E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6164F0CD244FD73600F02A0E /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		6164F0CE244FD73600F02A0E /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		61B8B4AE2459D50200391587 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		61BF4C74244EE436000D11EB /* parent-tablet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "parent-tablet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BF4C77244EE436000D11EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61BF4C79244EE436000D11EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				61BF4C97244EF019000D11EB /* EventViewController.swift */,
 				616225FA245832EB0018BF57 /* SMSViewController.swift */,
 				616225FC24584DB40018BF57 /* ContactsDisplayController.swift */,
+				61B8B4AE2459D50200391587 /* EmailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				616225FF24584E950018BF57 /* ContactStruct.swift in Sources */,
 				61BF4C78244EE436000D11EB /* AppDelegate.swift in Sources */,
 				61BF4C7A244EE436000D11EB /* SceneDelegate.swift in Sources */,
+				61B8B4AF2459D50200391587 /* EmailViewController.swift in Sources */,
 				616225FD24584DB40018BF57 /* ContactsDisplayController.swift in Sources */,
 				61BF4C94244EECD9000D11EB /* MainViewController.swift in Sources */,
 				6164F0C6244FC34F00F02A0E /* Event.swift in Sources */,

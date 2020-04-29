@@ -227,7 +227,7 @@
                                 <rect key="frame" x="80" y="128" width="254" height="40"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="sgt-yK-wNJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="SEn-ld-r6y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -237,27 +237,17 @@
                                 <rect key="frame" x="80" y="208" width="254" height="40"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Exg-Sf-fQx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78x-mo-kxR">
-                                <rect key="frame" x="80" y="288" width="254" height="40"/>
-                                <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="zGo-1g-tiA"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ug9-8I-XxO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1L-9c-9cc">
-                                <rect key="frame" x="60" y="378" width="294" height="50"/>
+                                <rect key="frame" x="60" y="298" width="294" height="50"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="qZM-eB-i3w"/>
+                                    <constraint firstAttribute="height" constant="50" id="DmH-T6-RZS"/>
                                 </constraints>
                                 <state key="normal" title="Calendar and Events"/>
                                 <connections>
@@ -265,34 +255,45 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V83-5a-ivt">
-                                <rect key="frame" x="60" y="478" width="294" height="50"/>
+                                <rect key="frame" x="60" y="398" width="294" height="50"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9he-aE-TiC"/>
+                                    <constraint firstAttribute="height" constant="50" id="cXA-Bw-mBY"/>
                                 </constraints>
                                 <state key="normal" title="Send SMS"/>
                                 <connections>
                                     <segue destination="3m3-Ca-XM3" kind="show" id="sfz-1S-XDs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-pT-LKP">
+                                <rect key="frame" x="60" y="498" width="294" height="50"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="648-AY-N7M"/>
+                                </constraints>
+                                <state key="normal" title="Send Email"/>
+                                <connections>
+                                    <segue destination="52Q-7A-wAF" kind="show" id="PuE-Fs-RgS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50699180519999998" green="0.7298017349" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="1SH-KA-I4w" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="AH6-9d-PFX"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="V83-5a-ivt" secondAttribute="trailing" constant="60" id="AxY-3Y-sMO"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="zKb-zq-J4S" secondAttribute="trailing" constant="80" id="BDi-40-nbN"/>
-                            <constraint firstItem="1SH-KA-I4w" firstAttribute="top" secondItem="zKb-zq-J4S" secondAttribute="bottom" constant="40" id="D2D-Lf-Y8G"/>
-                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="G4O-XY-cnk"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="78x-mo-kxR" secondAttribute="trailing" constant="80" id="Kcy-LH-Tlr"/>
-                            <constraint firstItem="78x-mo-kxR" firstAttribute="top" secondItem="1SH-KA-I4w" secondAttribute="bottom" constant="40" id="TkJ-qq-320"/>
-                            <constraint firstItem="zKb-zq-J4S" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="ar7-56-qy2"/>
-                            <constraint firstItem="V83-5a-ivt" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="hI3-eQ-9CB"/>
-                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="top" secondItem="78x-mo-kxR" secondAttribute="bottom" constant="50" id="mho-em-zT1"/>
-                            <constraint firstItem="78x-mo-kxR" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="qEe-uM-4yF"/>
-                            <constraint firstItem="zKb-zq-J4S" firstAttribute="top" secondItem="bgL-9h-yVD" secondAttribute="top" constant="40" id="t4g-UB-9ra"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="1SH-KA-I4w" secondAttribute="trailing" constant="80" id="tXp-nP-yrP"/>
-                            <constraint firstItem="V83-5a-ivt" firstAttribute="top" secondItem="Y1L-9c-9cc" secondAttribute="bottom" constant="50" id="wdf-4T-E2K"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="Y1L-9c-9cc" secondAttribute="trailing" constant="60" id="yeP-D5-Omg"/>
+                            <constraint firstItem="zKb-zq-J4S" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="0WX-fP-9LU"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="Y1L-9c-9cc" secondAttribute="trailing" constant="60" id="2Zd-cw-pgC"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="V83-5a-ivt" secondAttribute="trailing" constant="60" id="ASa-SR-Ir1"/>
+                            <constraint firstItem="1SH-KA-I4w" firstAttribute="top" secondItem="zKb-zq-J4S" secondAttribute="bottom" constant="40" id="F2Y-TP-jGK"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="fpB-pT-LKP" secondAttribute="trailing" constant="60" id="Fyh-kz-hK0"/>
+                            <constraint firstItem="fpB-pT-LKP" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="IkW-K1-PFS"/>
+                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="top" secondItem="1SH-KA-I4w" secondAttribute="bottom" constant="50" id="Lcq-Cc-MKO"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="zKb-zq-J4S" secondAttribute="trailing" constant="80" id="MiP-z5-x6s"/>
+                            <constraint firstItem="V83-5a-ivt" firstAttribute="top" secondItem="Y1L-9c-9cc" secondAttribute="bottom" constant="50" id="NZd-OW-zd0"/>
+                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="bFs-pw-dsa"/>
+                            <constraint firstItem="V83-5a-ivt" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="bka-Zi-ExU"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="1SH-KA-I4w" secondAttribute="trailing" constant="80" id="g1w-qS-WPV"/>
+                            <constraint firstItem="1SH-KA-I4w" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="i7E-eZ-MON"/>
+                            <constraint firstItem="fpB-pT-LKP" firstAttribute="top" secondItem="V83-5a-ivt" secondAttribute="bottom" constant="50" id="tcW-mC-NN8"/>
+                            <constraint firstItem="zKb-zq-J4S" firstAttribute="top" secondItem="bgL-9h-yVD" secondAttribute="top" constant="40" id="y7U-v3-lTs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bgL-9h-yVD"/>
                     </view>
@@ -306,7 +307,6 @@
                     <connections>
                         <outlet property="emailLabel" destination="1SH-KA-I4w" id="yaO-Wn-nu7"/>
                         <outlet property="nameLabel" destination="zKb-zq-J4S" id="D1l-N9-3XG"/>
-                        <outlet property="phoneLabel" destination="78x-mo-kxR" id="47m-To-O8y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbb-2X-vzK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -382,6 +382,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpJ-Ab-oo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4773.913043478261" y="494.86607142857139"/>
+        </scene>
+        <!--Email View Controller-->
+        <scene sceneID="B83-Qp-cch">
+            <objects>
+                <viewController id="52Q-7A-wAF" customClass="EmailViewController" customModule="parent_tablet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ix8-hd-NXg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv7-pN-tVV">
+                                <rect key="frame" x="130" y="168" width="154" height="50"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="III-m2-GCe"/>
+                                </constraints>
+                                <state key="normal" title="Send Mail"/>
+                                <connections>
+                                    <action selector="SelectContacts:" destination="52Q-7A-wAF" eventType="touchUpInside" id="xmB-63-2fs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50699180519999998" green="0.7298017349" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Vv7-pN-tVV" firstAttribute="top" secondItem="Soj-dd-xFj" secondAttribute="top" constant="80" id="2fO-bk-seL"/>
+                            <constraint firstItem="Soj-dd-xFj" firstAttribute="trailing" secondItem="Vv7-pN-tVV" secondAttribute="trailing" constant="130" id="6UM-ay-Loe"/>
+                            <constraint firstItem="Vv7-pN-tVV" firstAttribute="leading" secondItem="Soj-dd-xFj" secondAttribute="leading" constant="130" id="OCw-Yt-DyA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Soj-dd-xFj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XXc-AE-kwP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ead-WI-Agq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4794.202898550725" y="1171.875"/>
         </scene>
         <!--Contacts Display Controller-->
         <scene sceneID="c2Z-XF-11c">
