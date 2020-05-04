@@ -24,6 +24,10 @@ struct K {
         static let dateStringField = "dateString"
         static let dateField = "dateAdded"
         static let eventId = "id"
+        
+        static let userCollectionsName = "Users"
+        static let userIdField = "userId"
+        static let familyIdField = "familyId"
     }
     
 }

@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var appleLoginProviderStackView: UIStackView!
     
+    let db = Firestore.firestore()
     var fullName:String?
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -87,6 +88,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: GIDSignInSuccessDelegate {
     
     func NavigateAfterGSignIn() {
+        checkAndSyncUserDetailsWithDB((Auth.auth().currentUser?.uid)!)
         self.performSegue(withIdentifier: K.loginSegue, sender: self)
     }
     
@@ -124,7 +126,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 // User is signed in to Firebase with Apple.
                 print("Apple Sign in success")
                 self.fullName = PersonNameComponentsFormatter.localizedString(from: appleIDCredential.fullName!, style: .default, options: .init())
-                
+                self.checkAndSyncUserDetailsWithDB((authResult?.user.uid)!)
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: K.loginSegue, sender: self)
                 }
@@ -197,6 +199,41 @@ extension LoginViewController {
             destinationVC.userEmail = currentUser?.email
             
         }
+    }
+    
+    func checkAndSyncUserDetailsWithDB(_ userId:String) -> Void {
+        
+        if let user = Auth.auth().currentUser {
+            let docRef = db.collection(K.FStore.userCollectionsName).document(user.uid)
+            docRef.getDocument { (documentSnapshot, error) in
+                if let e = error {
+                    print(e.localizedDescription)
+                }
+                else {
+                    if let document = documentSnapshot, document.exists {
+                        if let data = document.data() {
+                            User.shared.userId = data[K.FStore.userIdField] as? String
+                            User.shared.familyId = data[K.FStore.familyIdField] as? String
+                            print("User data already exists in collection")
+                        }
+                    }
+                    else {
+                        self.db.collection(K.FStore.userCollectionsName).document(user.uid).setData([K.FStore.userIdField : user.uid,K.FStore.familyIdField : "testid"]) { (error) in
+                            if let er = error {
+                                print(er.localizedDescription)
+                            }
+                            else {
+                                print("new user data written successfully")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else {
+            print("user is not signed in")
+        }
+        
     }
     
 }
