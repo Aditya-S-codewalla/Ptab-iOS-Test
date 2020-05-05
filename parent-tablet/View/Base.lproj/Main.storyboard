@@ -276,6 +276,17 @@
                                     <segue destination="52Q-7A-wAF" kind="show" id="PuE-Fs-RgS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gv-uN-ZEj">
+                                <rect key="frame" x="60" y="598" width="294" height="40"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gFv-hl-EK5"/>
+                                </constraints>
+                                <state key="normal" title="Send SMS v2"/>
+                                <connections>
+                                    <segue destination="BS9-dH-imb" kind="show" id="3OV-Ql-KAR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50699180519999998" green="0.7298017349" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -288,10 +299,13 @@
                             <constraint firstItem="Y1L-9c-9cc" firstAttribute="top" secondItem="1SH-KA-I4w" secondAttribute="bottom" constant="50" id="Lcq-Cc-MKO"/>
                             <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="zKb-zq-J4S" secondAttribute="trailing" constant="80" id="MiP-z5-x6s"/>
                             <constraint firstItem="V83-5a-ivt" firstAttribute="top" secondItem="Y1L-9c-9cc" secondAttribute="bottom" constant="50" id="NZd-OW-zd0"/>
+                            <constraint firstItem="1gv-uN-ZEj" firstAttribute="top" secondItem="fpB-pT-LKP" secondAttribute="bottom" constant="50" id="Pzh-1e-ccz"/>
+                            <constraint firstItem="1gv-uN-ZEj" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="WxJ-9O-HIm"/>
                             <constraint firstItem="Y1L-9c-9cc" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="bFs-pw-dsa"/>
                             <constraint firstItem="V83-5a-ivt" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="bka-Zi-ExU"/>
                             <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="1SH-KA-I4w" secondAttribute="trailing" constant="80" id="g1w-qS-WPV"/>
                             <constraint firstItem="1SH-KA-I4w" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="i7E-eZ-MON"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="1gv-uN-ZEj" secondAttribute="trailing" constant="60" id="tZJ-Eu-BNe"/>
                             <constraint firstItem="fpB-pT-LKP" firstAttribute="top" secondItem="V83-5a-ivt" secondAttribute="bottom" constant="50" id="tcW-mC-NN8"/>
                             <constraint firstItem="zKb-zq-J4S" firstAttribute="top" secondItem="bgL-9h-yVD" secondAttribute="top" constant="40" id="y7U-v3-lTs"/>
                         </constraints>
@@ -381,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpJ-Ab-oo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4773.913043478261" y="494.86607142857139"/>
+            <point key="canvasLocation" x="4794" y="182"/>
         </scene>
         <!--Email View Controller-->
         <scene sceneID="B83-Qp-cch">
@@ -415,7 +429,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ead-WI-Agq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4794.202898550725" y="1171.875"/>
+            <point key="canvasLocation" x="4793" y="880"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="tH3-7R-efs">
+            <objects>
+                <viewController id="BS9-dH-imb" customClass="MessageViewController" customModule="parent_tablet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cbA-re-HvK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ch-R4-dKb">
+                                <rect key="frame" x="60" y="148" width="294" height="50"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cnC-s8-ds5"/>
+                                </constraints>
+                                <state key="normal" title="Send SMS"/>
+                                <connections>
+                                    <action selector="sendMessageButtono:" destination="BS9-dH-imb" eventType="touchUpInside" id="H6t-tw-Eom"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50699180519999998" green="0.7298017349" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Pua-cc-Mf7" firstAttribute="trailing" secondItem="7ch-R4-dKb" secondAttribute="trailing" constant="60" id="NQf-FV-P2m"/>
+                            <constraint firstItem="7ch-R4-dKb" firstAttribute="top" secondItem="Pua-cc-Mf7" secondAttribute="top" constant="60" id="XGG-AI-InD"/>
+                            <constraint firstItem="7ch-R4-dKb" firstAttribute="leading" secondItem="Pua-cc-Mf7" secondAttribute="leading" constant="60" id="pCi-8b-ERu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pua-cc-Mf7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HPe-Ye-hz9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpb-Dl-QGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4796" y="1527"/>
         </scene>
         <!--Contacts Display Controller-->
         <scene sceneID="c2Z-XF-11c">
@@ -471,7 +519,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XMb-xM-U7Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4760" y="-227"/>
+            <point key="canvasLocation" x="4794" y="-518"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="YnV-3Y-gC0">

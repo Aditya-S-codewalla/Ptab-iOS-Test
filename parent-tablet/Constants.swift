@@ -28,6 +28,7 @@ struct K {
         static let userCollectionsName = "Users"
         static let userIdField = "userId"
         static let familyIdField = "familyId"
+        static let userNameField = "userName"
     }
     
 }

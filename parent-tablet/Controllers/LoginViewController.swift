@@ -37,8 +37,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //performExistingAccountSetupFlows()
-        startSigninWithAppleFlow()
+        
+        //startSigninWithAppleFlow()
     }
     
     @IBAction func GIDSignInButtonPressed(_ sender: GIDSignInButton) {
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: GIDSignInSuccessDelegate {
     
     func NavigateAfterGSignIn() {
-        checkAndSyncUserDetailsWithDB((Auth.auth().currentUser?.uid)!)
+        checkAndSyncUserDetailsWithDB((Auth.auth().currentUser?.uid)!,(Auth.auth().currentUser?.displayName)!)
         self.performSegue(withIdentifier: K.loginSegue, sender: self)
     }
     
@@ -125,11 +125,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 }
                 // User is signed in to Firebase with Apple.
                 print("Apple Sign in success")
-                self.fullName = PersonNameComponentsFormatter.localizedString(from: appleIDCredential.fullName!, style: .default, options: .init())
-                self.checkAndSyncUserDetailsWithDB((authResult?.user.uid)!)
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
-                }
+                let userNameFromApple = PersonNameComponentsFormatter.localizedString(from: appleIDCredential.fullName!, style: .default, options: .init())
+                self.checkAndSyncUserDetailsWithDB((authResult?.user.uid)!,userNameFromApple)
                 
             }
         }
@@ -195,13 +192,13 @@ extension LoginViewController {
             let destinationVC = segue.destination as! MainViewController
             let currentUser = Auth.auth().currentUser
             
-            destinationVC.userName = fullName ?? currentUser?.displayName
+            destinationVC.userName = User.shared.userName ?? currentUser?.displayName
             destinationVC.userEmail = currentUser?.email
             
         }
     }
     
-    func checkAndSyncUserDetailsWithDB(_ userId:String) -> Void {
+    func checkAndSyncUserDetailsWithDB(_ userId:String,_ userName:String) -> Void {
         
         if let user = Auth.auth().currentUser {
             let docRef = db.collection(K.FStore.userCollectionsName).document(user.uid)
@@ -214,16 +211,26 @@ extension LoginViewController {
                         if let data = document.data() {
                             User.shared.userId = data[K.FStore.userIdField] as? String
                             User.shared.familyId = data[K.FStore.familyIdField] as? String
+                            User.shared.userName = data[K.FStore.userNameField] as? String
                             print("User data already exists in collection")
+                            DispatchQueue.main.async {
+                                self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                            }
                         }
                     }
                     else {
-                        self.db.collection(K.FStore.userCollectionsName).document(user.uid).setData([K.FStore.userIdField : user.uid,K.FStore.familyIdField : "testid"]) { (error) in
+                        User.shared.userId = user.uid
+                        User.shared.familyId = "RandomFamilyId"
+                        User.shared.userName = userName
+                        self.db.collection(K.FStore.userCollectionsName).document(user.uid).setData(User.shared.userDict) { (error) in
                             if let er = error {
                                 print(er.localizedDescription)
                             }
                             else {
                                 print("new user data written successfully")
+                                DispatchQueue.main.async {
+                                    self.performSegue(withIdentifier: K.loginSegue, sender: self)
+                                }
                             }
                         }
                     }
