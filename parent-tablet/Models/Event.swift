@@ -14,14 +14,14 @@ struct Event {
     let dateAdded:Double
     let id:String
     
-    func ToDictionary(title:String,dateString:String,creator:String,dateAdded:Double,id:String) -> [String:Any] {
+    var eventDict:[String:Any] {
         var dict = [String:Any]()
         dict[K.FStore.titleField]=self.title
         dict[K.FStore.creatorField]=self.creator
         dict[K.FStore.dateStringField]=self.dateString
         dict[K.FStore.dateField]=self.dateAdded
         dict[K.FStore.eventId]=self.id
-        
         return dict
     }
+    
 }

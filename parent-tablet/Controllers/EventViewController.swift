@@ -29,13 +29,12 @@ class EventViewController: UIViewController {
         
         if let eventBody = eventTitleTextField.text, let eventCreator = Auth.auth().currentUser?.email, let dateStr = dateString {
             
-            let writeId = db.collection(K.FStore.collectionName).document().documentID
+            //let writeId = db.collection(K.FStore.collectionName).document().documentID
+            let eventId = Auth.auth().currentUser?.uid
             
-            let event = Event(title: eventBody, dateString: dateStr, creator: eventCreator, dateAdded: Date().timeIntervalSince1970, id: writeId)
+            let event = Event(title: eventBody, dateString: dateStr, creator: eventCreator, dateAdded: Date().timeIntervalSince1970, id: eventId!)
             
-            let eventDict = event.ToDictionary(title: event.title, dateString: event.dateString, creator: event.creator, dateAdded: event.dateAdded, id: event.id)
-            
-            db.collection(K.FStore.collectionName).addDocument(data: eventDict) { (error) in
+            db.collection(K.FStore.collectionName).addDocument(data: event.eventDict) { (error) in
                 if let e = error {
                     print(e.localizedDescription)
                 }
@@ -51,9 +50,9 @@ class EventViewController: UIViewController {
     }
     
     func LoadEvents() {
-        if let dateStr = dateString {
+        if let dateStr = dateString, let eventId = User.shared.userId {
             
-            db.collection(K.FStore.collectionName).order(by: K.FStore.dateField).whereField(K.FStore.dateStringField, isEqualTo: dateStr).addSnapshotListener { (querySnapshot, error) in
+            db.collection(K.FStore.collectionName).order(by: K.FStore.dateField).whereField(K.FStore.dateStringField, isEqualTo: dateStr).whereField(K.FStore.eventId, isEqualTo: eventId).addSnapshotListener { (querySnapshot, error) in
                 
                 self.events = []
                 

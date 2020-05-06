@@ -10,5 +10,5 @@ target 'parent-tablet' do
   pod 'Firebase/Firestore'
   pod 'FSCalendar'
   pod 'GoogleSignIn'
-
+  pod 'IQKeyboardManager'
 end

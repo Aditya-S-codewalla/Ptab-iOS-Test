@@ -49,26 +49,33 @@ class CalendarViewController: UIViewController {
     }
     
     func FetchAllEvents() {
-        db.collection(K.FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
-            
-            self.datesWithEvents = []
-            
-            if let e = error {
-                print("\(e.localizedDescription) inside Calendar controller")
-            }
-            else {
-                if let snapshotDocuments = querySnapshot?.documents {
-                    for doc in snapshotDocuments {
-                        let data = doc.data()
-                        if let eventDate = data[K.FStore.dateStringField] as? String {
-                            self.datesWithEvents.append(eventDate)
+        
+        //Retreiving all events by querying with respect to userid. Later we can simply change it to family id.
+        if let eventId = User.shared.userId {
+            db.collection(K.FStore.collectionName).whereField(K.FStore.eventId, isEqualTo: eventId).addSnapshotListener { (querySnapshot, error) in
+                
+                self.datesWithEvents = []
+                
+                if let e = error {
+                    print("\(e.localizedDescription) inside Calendar controller")
+                }
+                else {
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            if let eventDate = data[K.FStore.dateStringField] as? String {
+                                self.datesWithEvents.append(eventDate)
+                            }
                         }
-                    }
-                    DispatchQueue.main.async {
-                        self.calendar.reloadData()
+                        DispatchQueue.main.async {
+                            self.calendar.reloadData()
+                        }
                     }
                 }
             }
+        }
+        else {
+            print("Error retreiving user id")
         }
         
     }
