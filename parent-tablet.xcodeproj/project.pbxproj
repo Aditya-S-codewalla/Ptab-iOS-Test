@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		613BB61A2460591900576644 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BB6192460591900576644 /* User.swift */; };
 		613BB61C24617EF600576644 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BB61B24617EF600576644 /* MessageViewController.swift */; };
+		613BB61F246424C800576644 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BB61E246424C800576644 /* Util.swift */; };
 		616225FB245832EC0018BF57 /* SMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616225FA245832EB0018BF57 /* SMSViewController.swift */; };
 		616225FD24584DB40018BF57 /* ContactsDisplayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616225FC24584DB40018BF57 /* ContactsDisplayController.swift */; };
 		616225FF24584E950018BF57 /* ContactStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616225FE24584E950018BF57 /* ContactStruct.swift */; };
@@ -37,6 +38,7 @@
 		53B3C76DAD6D00EA6B9CEDD1 /* Pods-parent-tablet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parent-tablet.debug.xcconfig"; path = "Target Support Files/Pods-parent-tablet/Pods-parent-tablet.debug.xcconfig"; sourceTree = "<group>"; };
 		613BB6192460591900576644 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		613BB61B24617EF600576644 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		613BB61E246424C800576644 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		616225FA245832EB0018BF57 /* SMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSViewController.swift; sourceTree = "<group>"; };
 		616225FC24584DB40018BF57 /* ContactsDisplayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDisplayController.swift; sourceTree = "<group>"; };
 		616225FE24584E950018BF57 /* ContactStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactStruct.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		613BB61D2464249200576644 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				613BB61E246424C800576644 /* Util.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		61BF4C6B244EE436000D11EB = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				61BF4C9F244F1B56000D11EB /* parent-tablet.entitlements */,
+				613BB61D2464249200576644 /* Utils */,
 				61BF4C8E244EE502000D11EB /* Models */,
 				61BF4C8D244EE4FA000D11EB /* Controllers */,
 				61BF4C9A244EF172000D11EB /* View */,
@@ -301,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61BF4C8C244EE4A3000D11EB /* WelcomeViewController.swift in Sources */,
+				613BB61F246424C800576644 /* Util.swift in Sources */,
 				616225FF24584E950018BF57 /* ContactStruct.swift in Sources */,
 				61BF4C78244EE436000D11EB /* AppDelegate.swift in Sources */,
 				61BF4C7A244EE436000D11EB /* SceneDelegate.swift in Sources */,

@@ -114,17 +114,23 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
+            
+            // Display activity loader
+            self.showLoader()
+            
             // Sign in with Firebase.
             Auth.auth().signIn(with: credential) { (authResult, error) in
                 if let e = error {
                     // Error. If error.code == .MissingOrInvalidNonce, make sure
                     // you're sending the SHA256-hashed nonce as a hex string with
                     // your request to Apple.
+                    self.removeLoader()
                     print(e.localizedDescription)
                     return
                 }
                 // User is signed in to Firebase with Apple.
                 print("Apple Sign in success")
+                
                 let userNameFromApple = PersonNameComponentsFormatter.localizedString(from: appleIDCredential.fullName!, style: .default, options: .init())
                 self.checkAndSyncUserDetailsWithDB((authResult?.user.uid)!,userNameFromApple)
                 
@@ -214,6 +220,7 @@ extension LoginViewController {
                             User.shared.userName = data[K.FStore.userNameField] as? String
                             print("User data already exists in collection")
                             DispatchQueue.main.async {
+                                self.removeLoader()
                                 self.performSegue(withIdentifier: K.loginSegue, sender: self)
                             }
                         }
@@ -229,6 +236,7 @@ extension LoginViewController {
                             else {
                                 print("new user data written successfully")
                                 DispatchQueue.main.async {
+                                    self.removeLoader()
                                     self.performSegue(withIdentifier: K.loginSegue, sender: self)
                                 }
                             }
@@ -238,6 +246,7 @@ extension LoginViewController {
             }
         }
         else {
+            self.removeLoader()
             print("user is not signed in")
         }
         
