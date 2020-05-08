@@ -124,7 +124,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                     // Error. If error.code == .MissingOrInvalidNonce, make sure
                     // you're sending the SHA256-hashed nonce as a hex string with
                     // your request to Apple.
-                    self.removeLoader()
+                    self.removeLoader()//remove loader if error
                     print(e.localizedDescription)
                     return
                 }
