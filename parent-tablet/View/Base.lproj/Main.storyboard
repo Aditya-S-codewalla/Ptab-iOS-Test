@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eMY-Ae-8tA">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,11 +46,24 @@
                                     <segue destination="SOb-02-Zv2" kind="show" id="y0i-47-xD7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNl-tY-ulO">
+                                <rect key="frame" x="120" y="118" width="174" height="40"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XHz-e4-t86"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.50699180520305187" green="0.72980173494685308" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="dNl-tY-ulO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="4Li-SO-g1k"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NrG-yx-kfm" secondAttribute="trailing" constant="50" id="8h5-di-O22"/>
                             <constraint firstItem="4eu-mk-jXD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="AHm-9W-6DI"/>
+                            <constraint firstItem="dNl-tY-ulO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="EV2-wR-5Ab"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dNl-tY-ulO" secondAttribute="trailing" constant="120" id="HaS-9h-eCW"/>
                             <constraint firstItem="4eu-mk-jXD" firstAttribute="top" secondItem="NrG-yx-kfm" secondAttribute="bottom" constant="250" id="Kay-Ye-Gw4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VHI-Ne-O54" secondAttribute="trailing" constant="80" id="NrU-67-dhc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4eu-mk-jXD" secondAttribute="trailing" constant="80" id="RzK-AR-Hkh"/>
@@ -64,6 +77,7 @@
                     <navigationItem key="navigationItem" id="At0-1w-e1i"/>
                     <connections>
                         <outlet property="titleLabel" destination="NrG-yx-kfm" id="ADq-jD-2Pl"/>
+                        <outlet property="uinLabel" destination="dNl-tY-ulO" id="5p4-gL-4Zy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

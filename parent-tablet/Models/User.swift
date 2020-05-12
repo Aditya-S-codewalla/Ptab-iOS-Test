@@ -22,4 +22,6 @@ class User {
                 K.FStore.familyIdField:familyId ?? "",
                 K.FStore.userNameField:userName ?? ""]
     }
+    
+    var uin:String?
 }

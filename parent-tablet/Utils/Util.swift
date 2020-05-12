@@ -15,7 +15,7 @@ extension UIViewController {
     
     func showLoader() {
         aView = UIView(frame: self.view.bounds)
-        aView?.backgroundColor = UIColor.gray
+        aView?.backgroundColor = UIColor.cyan
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.center = aView!.center
         activityIndicator.startAnimating()

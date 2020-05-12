@@ -9,10 +9,12 @@
 import UIKit
 import ContactsUI
 import MessageUI
+import Firebase
 
 class MessageViewController: UIViewController {
     
     var messageRecipients:[String] = []
+    var dynamicLinkURLString:String = "placeholder for dynamic link"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +34,14 @@ class MessageViewController: UIViewController {
                 return
             }
             if accessGranted {
-                let cnPicker = CNContactPickerViewController()
-                cnPicker.delegate = self
-                cnPicker.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0")
-                self.present(cnPicker, animated: true, completion: nil)
+                
+                DispatchQueue.main.async {
+                    let cnPicker = CNContactPickerViewController()
+                    cnPicker.delegate = self
+                    cnPicker.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0")
+                    self.present(cnPicker, animated: true, completion: nil)
+                }
+                
             }
             else {
                 print("Access Not Granted")
@@ -47,7 +53,8 @@ class MessageViewController: UIViewController {
         if MFMessageComposeViewController.canSendText() {
             let messsageController = MFMessageComposeViewController()
             messsageController.messageComposeDelegate = self
-            messsageController.body = "P-Tab message testing"
+            createDynamicLink()
+            messsageController.body = dynamicLinkURLString
             messsageController.recipients = messageRecipients
             self.present(messsageController, animated: true, completion: nil)
         }
@@ -55,6 +62,33 @@ class MessageViewController: UIViewController {
             print("Unable to send messages from this device")
         }
     }
+    
+    func createDynamicLink() {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "www.example.com"
+        components.path = "/uinvalue"
+        
+        let uinQueryItem = URLQueryItem(name: "uin", value: "232123")
+        components.queryItems = [uinQueryItem]
+        
+        guard let linkParameter = components.url else { return }
+        
+        guard let shareLink = DynamicLinkComponents.init(link: linkParameter, domainURIPrefix: "https://ptabtesting.page.link") else {
+            print("Could not create FDL component")
+            return
+        }
+        
+        if let myBundleId = Bundle.main.bundleIdentifier {
+            shareLink.iOSParameters = DynamicLinkIOSParameters(bundleID: myBundleId)
+        }
+        shareLink.iOSParameters?.appStoreID = "962194608"
+        
+        guard let longURL = shareLink.url else { return }
+        
+        dynamicLinkURLString = longURL.absoluteString
+    }
+    
 }
 
 extension MessageViewController: CNContactPickerDelegate {

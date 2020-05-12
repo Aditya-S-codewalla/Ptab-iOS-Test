@@ -8,7 +8,9 @@ target 'parent-tablet' do
   # Pods for parent-tablet
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
-  pod 'FSCalendar'
+  pod 'Firebase/DynamicLinks'
   pod 'GoogleSignIn'
+  pod 'FSCalendar'
   pod 'IQKeyboardManager'
+  
 end

@@ -11,6 +11,7 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var uinLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
