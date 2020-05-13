@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
         titleLabel.text = K.appName
         titleLabel.text = ""
+        
         var characterIndex = 0.0
         let titleText = K.appName
         for letter in titleText {
@@ -30,10 +31,15 @@ class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        uinLabel.text = User.shared.uin ?? ""
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
+    }
+    
+    func setUINLabel(_ labelValue:String) {
+        uinLabel.text = labelValue
     }
 
 

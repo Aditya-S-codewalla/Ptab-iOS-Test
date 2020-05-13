@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -46,6 +47,52 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+
+        if let incomingURL = userActivity.webpageURL {
+            print("Incoming url in universal link handler is \(incomingURL)")
+            _ = DynamicLinks.dynamicLinks().handleUniversalLink(incomingURL) { (dynamicLink, error) in
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
+                }
+                if let dynamicLink = dynamicLink {
+                    self.handleIncomingDynamicLink(dynamicLink)
+                }
+            }
+        }
+
+    }
+    
+    func handleIncomingDynamicLink(_ dynamicLink: DynamicLink) {
+        guard let url = dynamicLink.url else {
+            print("Dynamic link object has no URL")
+            return
+        }
+        print("Incoming link parameter is:\(url.absoluteString)")
+        guard (dynamicLink.matchType == .unique || dynamicLink.matchType == .default) else {
+            print("Not a strong enough match type to continue")
+            return
+        }
+
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false), let queryItems = components.queryItems else {
+            return
+        }
+        if components.path == "/uinvalue" {
+            if let uinQueryItem = queryItems.first(where: {$0.name == "uin"}) {
+                guard let uinValue = uinQueryItem.value else { return }
+                let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                guard let newDetailVC = storyboard.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else {
+                    return
+                }
+                print("uin value from universal link:\(uinValue)")
+                
+                User.shared.uin = uinValue
+                (self.window?.rootViewController as? UINavigationController)?.pushViewController(newDetailVC, animated: true)
+            }
+        }
     }
 
 
