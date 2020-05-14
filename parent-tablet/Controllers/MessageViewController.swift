@@ -14,7 +14,7 @@ import Firebase
 class MessageViewController: UIViewController {
     
     var messageRecipients:[String] = []
-    var dynamicLinkURLString:String = "placeholder for dynamic link"
+    var messageBodyText:String = "parent-tablet testing"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +53,7 @@ class MessageViewController: UIViewController {
         if MFMessageComposeViewController.canSendText() {
             let messsageController = MFMessageComposeViewController()
             messsageController.messageComposeDelegate = self
-            createDynamicLink()
-            messsageController.body = dynamicLinkURLString
+            messsageController.body = messageBodyText
             messsageController.recipients = messageRecipients
             self.present(messsageController, animated: true, completion: nil)
         }
@@ -63,31 +62,7 @@ class MessageViewController: UIViewController {
         }
     }
     
-    func createDynamicLink() {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "www.example.com"
-        components.path = "/uinvalue"
-        
-        let uinQueryItem = URLQueryItem(name: "uin", value: "232123")
-        components.queryItems = [uinQueryItem]
-        
-        guard let linkParameter = components.url else { return }
-        
-        guard let shareLink = DynamicLinkComponents.init(link: linkParameter, domainURIPrefix: "https://ptabtesting.page.link") else {
-            print("Could not create FDL component")
-            return
-        }
-        
-        if let myBundleId = Bundle.main.bundleIdentifier {
-            shareLink.iOSParameters = DynamicLinkIOSParameters(bundleID: myBundleId)
-        }
-        shareLink.iOSParameters?.appStoreID = "962194608"
-        
-        guard let longURL = shareLink.url else { return }
-        
-        dynamicLinkURLString = longURL.absoluteString
-    }
+    
     
 }
 

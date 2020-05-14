@@ -31,7 +31,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
-        uinLabel.text = User.shared.uin ?? ""
+        uinLabel.text = User.shared.uin ?? "Reserved for UIN"
     }
     
     override func viewWillDisappear(_ animated: Bool) {

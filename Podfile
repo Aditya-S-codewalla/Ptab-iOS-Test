@@ -9,6 +9,7 @@ target 'parent-tablet' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/DynamicLinks'
+  pod 'Firebase/Analytics'
   pod 'GoogleSignIn'
   pod 'FSCalendar'
   pod 'IQKeyboardManager'

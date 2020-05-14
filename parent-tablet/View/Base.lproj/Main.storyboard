@@ -46,7 +46,7 @@
                                     <segue destination="SOb-02-Zv2" kind="show" id="y0i-47-xD7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNl-tY-ulO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reserved for UIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNl-tY-ulO">
                                 <rect key="frame" x="120" y="118" width="174" height="40"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -258,10 +258,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1L-9c-9cc">
-                                <rect key="frame" x="60" y="298" width="294" height="50"/>
+                                <rect key="frame" x="60" y="278" width="294" height="40"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="DmH-T6-RZS"/>
+                                    <constraint firstAttribute="height" constant="40" id="ffb-iv-xA4"/>
                                 </constraints>
                                 <state key="normal" title="Calendar and Events"/>
                                 <connections>
@@ -269,10 +269,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V83-5a-ivt">
-                                <rect key="frame" x="60" y="398" width="294" height="50"/>
+                                <rect key="frame" x="60" y="348" width="294" height="40"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="cXA-Bw-mBY"/>
+                                    <constraint firstAttribute="height" constant="40" id="SMb-dt-8Sw"/>
                                 </constraints>
                                 <state key="normal" title="Send SMS"/>
                                 <connections>
@@ -280,10 +280,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpB-pT-LKP">
-                                <rect key="frame" x="60" y="498" width="294" height="50"/>
+                                <rect key="frame" x="60" y="418" width="294" height="40"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="648-AY-N7M"/>
+                                    <constraint firstAttribute="height" constant="40" id="Yhv-it-Nkq"/>
                                 </constraints>
                                 <state key="normal" title="Send Email"/>
                                 <connections>
@@ -291,36 +291,50 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1gv-uN-ZEj">
-                                <rect key="frame" x="60" y="598" width="294" height="40"/>
+                                <rect key="frame" x="60" y="488" width="294" height="40"/>
                                 <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="gFv-hl-EK5"/>
+                                    <constraint firstAttribute="height" constant="40" id="m4e-iZ-8Rq"/>
                                 </constraints>
                                 <state key="normal" title="Send SMS v2"/>
                                 <connections>
                                     <segue destination="BS9-dH-imb" kind="show" id="3OV-Ql-KAR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hY1-bp-GcF">
+                                <rect key="frame" x="60" y="558" width="294" height="40"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.97254901959999995" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zqC-sY-kBc"/>
+                                </constraints>
+                                <state key="normal" title="Invite Family member"/>
+                                <connections>
+                                    <action selector="inviteFamilyMemberPressed:" destination="Ppo-x4-zsb" eventType="touchUpInside" id="0pT-Q3-qAN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.50699180519999998" green="0.7298017349" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="zKb-zq-J4S" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="0WX-fP-9LU"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="Y1L-9c-9cc" secondAttribute="trailing" constant="60" id="2Zd-cw-pgC"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="V83-5a-ivt" secondAttribute="trailing" constant="60" id="ASa-SR-Ir1"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="1gv-uN-ZEj" secondAttribute="trailing" constant="60" id="2M2-xH-4aD"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="V83-5a-ivt" secondAttribute="trailing" constant="60" id="5oT-lX-BYh"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="hY1-bp-GcF" secondAttribute="trailing" constant="60" id="Azw-sy-eWr"/>
                             <constraint firstItem="1SH-KA-I4w" firstAttribute="top" secondItem="zKb-zq-J4S" secondAttribute="bottom" constant="40" id="F2Y-TP-jGK"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="fpB-pT-LKP" secondAttribute="trailing" constant="60" id="Fyh-kz-hK0"/>
-                            <constraint firstItem="fpB-pT-LKP" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="IkW-K1-PFS"/>
-                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="top" secondItem="1SH-KA-I4w" secondAttribute="bottom" constant="50" id="Lcq-Cc-MKO"/>
+                            <constraint firstItem="1gv-uN-ZEj" firstAttribute="top" secondItem="fpB-pT-LKP" secondAttribute="bottom" constant="30" id="FWN-zq-eWI"/>
+                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="top" secondItem="1SH-KA-I4w" secondAttribute="bottom" constant="30" id="Fx1-0q-gOT"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="Y1L-9c-9cc" secondAttribute="trailing" constant="60" id="JXw-9r-gar"/>
                             <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="zKb-zq-J4S" secondAttribute="trailing" constant="80" id="MiP-z5-x6s"/>
-                            <constraint firstItem="V83-5a-ivt" firstAttribute="top" secondItem="Y1L-9c-9cc" secondAttribute="bottom" constant="50" id="NZd-OW-zd0"/>
-                            <constraint firstItem="1gv-uN-ZEj" firstAttribute="top" secondItem="fpB-pT-LKP" secondAttribute="bottom" constant="50" id="Pzh-1e-ccz"/>
-                            <constraint firstItem="1gv-uN-ZEj" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="WxJ-9O-HIm"/>
-                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="bFs-pw-dsa"/>
-                            <constraint firstItem="V83-5a-ivt" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="bka-Zi-ExU"/>
+                            <constraint firstItem="V83-5a-ivt" firstAttribute="top" secondItem="Y1L-9c-9cc" secondAttribute="bottom" constant="30" id="Ofd-R8-jkP"/>
+                            <constraint firstItem="fpB-pT-LKP" firstAttribute="top" secondItem="V83-5a-ivt" secondAttribute="bottom" constant="30" id="Znb-HX-6RW"/>
+                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="fpB-pT-LKP" secondAttribute="trailing" constant="60" id="a0u-e4-Z0w"/>
+                            <constraint firstItem="Y1L-9c-9cc" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="ckX-NL-knq"/>
                             <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="1SH-KA-I4w" secondAttribute="trailing" constant="80" id="g1w-qS-WPV"/>
+                            <constraint firstItem="1gv-uN-ZEj" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="gx9-3W-X2w"/>
                             <constraint firstItem="1SH-KA-I4w" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="80" id="i7E-eZ-MON"/>
-                            <constraint firstItem="bgL-9h-yVD" firstAttribute="trailing" secondItem="1gv-uN-ZEj" secondAttribute="trailing" constant="60" id="tZJ-Eu-BNe"/>
-                            <constraint firstItem="fpB-pT-LKP" firstAttribute="top" secondItem="V83-5a-ivt" secondAttribute="bottom" constant="50" id="tcW-mC-NN8"/>
+                            <constraint firstItem="hY1-bp-GcF" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="kcD-xA-22Y"/>
+                            <constraint firstItem="V83-5a-ivt" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="rwj-Ax-Od5"/>
+                            <constraint firstItem="hY1-bp-GcF" firstAttribute="top" secondItem="1gv-uN-ZEj" secondAttribute="bottom" constant="30" id="vkL-9K-I0b"/>
+                            <constraint firstItem="fpB-pT-LKP" firstAttribute="leading" secondItem="bgL-9h-yVD" secondAttribute="leading" constant="60" id="wXS-hy-VMl"/>
                             <constraint firstItem="zKb-zq-J4S" firstAttribute="top" secondItem="bgL-9h-yVD" secondAttribute="top" constant="40" id="y7U-v3-lTs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bgL-9h-yVD"/>
@@ -621,7 +635,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YBB-gN-oW9"/>
+        <segue reference="89v-2L-XcX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="book.circle" catalog="system" width="128" height="121"/>

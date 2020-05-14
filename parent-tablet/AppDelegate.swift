@@ -54,19 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
     //MARK: - Dynamic Links with Universal links and Custom URL schemes
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("Received url through custom url scheme \(url.absoluteString)")
-        if let dynamicLink = DynamicLinks.dynamicLinks().dynamicLink(fromCustomSchemeURL: url) {
-            print("dynamic link in custom url scheme:\(dynamicLink.url?.absoluteString ?? "nil")")
-            return true
-        }
-        else {
-            return GIDSignIn.sharedInstance().handle(url)
-            //return false // comment this when the line above is uncommented
-        }
-        
-    }
-    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return GIDSignIn.sharedInstance().handle(url)
     }
