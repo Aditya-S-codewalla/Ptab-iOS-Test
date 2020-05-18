@@ -51,7 +51,8 @@ class MainViewController: UIViewController {
         components.path = "/uinvalue"
         
         let uinQueryItem = URLQueryItem(name: "uin", value: "232123")
-        components.queryItems = [uinQueryItem]
+        let uinQueryItem2 = URLQueryItem(name: "senderName", value: User.shared.userName)
+        components.queryItems = [uinQueryItem, uinQueryItem2]
         
         guard let linkParameter = components.url else { return }
         

@@ -24,4 +24,5 @@ class User {
     }
     
     var uin:String?
+    var tempLinkSenderName:String?
 }

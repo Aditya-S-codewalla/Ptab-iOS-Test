@@ -93,15 +93,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         if components.path == "/uinvalue" {
-            if let uinQueryItem = queryItems.first(where: {$0.name == "uin"}) {
+            if let uinQueryItem = queryItems.first(where: {$0.name == "uin"}), let uinQueryItem2 = queryItems.first(where: {$0.name == "senderName"}) {
                 guard let uinValue = uinQueryItem.value else { return }
+                guard let senderName = uinQueryItem2.value else { return }
                 let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let newDetailVC = storyboard.instantiateViewController(identifier: "WelcomeViewController") as? WelcomeViewController else {
+                guard let newDetailVC = storyboard.instantiateViewController(identifier: "DynamicLinkHandler") as? DynamicLinkViewController else {
                     return
                 }
                 print("uin value from universal link:\(uinValue)")
-                
                 User.shared.uin = uinValue
+                User.shared.tempLinkSenderName = senderName
                 (self.window?.rootViewController as? UINavigationController)?.pushViewController(newDetailVC, animated: true)
             }
         }

@@ -11,7 +11,6 @@ import UIKit
 class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var uinLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +30,10 @@ class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
-        uinLabel.text = User.shared.uin ?? "Reserved for UIN"
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
     }
     
-    func setUINLabel(_ labelValue:String) {
-        uinLabel.text = labelValue
-    }
-
-
 }

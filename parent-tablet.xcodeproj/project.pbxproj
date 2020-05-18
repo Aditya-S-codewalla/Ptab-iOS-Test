@@ -30,6 +30,7 @@
 		61BF4C98244EF019000D11EB /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BF4C97244EF019000D11EB /* EventViewController.swift */; };
 		61BF4C9C244EF3A0000D11EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61BF4C9B244EF3A0000D11EB /* GoogleService-Info.plist */; };
 		61BF4C9E244EFA25000D11EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BF4C9D244EFA25000D11EB /* Constants.swift */; };
+		61C42A5A2473116700787A23 /* DynamicLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C42A592473116700787A23 /* DynamicLinkViewController.swift */; };
 		9B7D1369448938CB58B0F34F /* Pods_parent_tablet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36A03CEEA0B0638937D0416 /* Pods_parent_tablet.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		61BF4C9B244EF3A0000D11EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61BF4C9D244EFA25000D11EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		61BF4C9F244F1B56000D11EB /* parent-tablet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "parent-tablet.entitlements"; sourceTree = "<group>"; };
+		61C42A592473116700787A23 /* DynamicLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkViewController.swift; sourceTree = "<group>"; };
 		C36A03CEEA0B0638937D0416 /* Pods_parent_tablet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_parent_tablet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				616225FC24584DB40018BF57 /* ContactsDisplayController.swift */,
 				61B8B4AE2459D50200391587 /* EmailViewController.swift */,
 				613BB61B24617EF600576644 /* MessageViewController.swift */,
+				61C42A592473116700787A23 /* DynamicLinkViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				613BB61C24617EF600576644 /* MessageViewController.swift in Sources */,
 				61BF4C96244EEFD1000D11EB /* CalendarViewController.swift in Sources */,
 				61BF4C90244EE7F3000D11EB /* RegisterViewController.swift in Sources */,
+				61C42A5A2473116700787A23 /* DynamicLinkViewController.swift in Sources */,
 				61BF4C9E244EFA25000D11EB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
