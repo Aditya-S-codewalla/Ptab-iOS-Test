@@ -16,11 +16,13 @@ class User {
     var userId:String?
     var familyId:String?
     var userName:String?
+    var dateAdded:String?
     
     var userDict:[String:Any]{
         return [K.FStore.userIdField:userId ?? "",
                 K.FStore.familyIdField:familyId ?? "",
-                K.FStore.userNameField:userName ?? ""]
+                K.FStore.userNameField:userName ?? "",
+                K.FStore.userDateAdded:dateAdded ?? ""]
     }
     
     var uin:String?

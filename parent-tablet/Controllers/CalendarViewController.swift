@@ -33,6 +33,16 @@ class CalendarViewController: UIViewController {
         calendar.delegate = self
         view.addSubview(calendar)
         self.calendar = calendar
+        
+        //adding swipe gestures to change the scope of the calendar
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        upSwipe.direction = .up
+        downSwipe.direction = .down
+        //view.addGestureRecognizer(upSwipe)
+        //view.addGestureRecognizer(downSwipe)
+        calendar.addGestureRecognizer(upSwipe)
+        calendar.addGestureRecognizer(downSwipe)
 
     }
     
@@ -78,6 +88,15 @@ class CalendarViewController: UIViewController {
             print("Error retreiving user id")
         }
         
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        if sender.direction == .up {
+            calendar.scope = .week
+        }
+        if sender.direction == .down {
+            calendar.scope = .month
+        }
     }
     
 }

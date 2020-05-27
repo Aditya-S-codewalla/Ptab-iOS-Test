@@ -218,6 +218,7 @@ extension LoginViewController {
                             User.shared.userId = data[K.FStore.userIdField] as? String
                             User.shared.familyId = data[K.FStore.familyIdField] as? String
                             User.shared.userName = data[K.FStore.userNameField] as? String
+                            User.shared.dateAdded = data[K.FStore.userDateAdded] as? String
                             print("User data already exists in collection")
                             DispatchQueue.main.async {
                                 self.removeLoader()
@@ -229,6 +230,14 @@ extension LoginViewController {
                         User.shared.userId = user.uid
                         User.shared.familyId = "RandomFamilyId"
                         User.shared.userName = userName
+                        
+                        let currentDate = Date()
+                        let formatter = DateFormatter()
+                        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+                        let dateString = formatter.string(from: currentDate)
+                        
+                        User.shared.dateAdded = dateString
+                        
                         self.db.collection(K.FStore.userCollectionsName).document(user.uid).setData(User.shared.userDict) { (error) in
                             if let er = error {
                                 print(er.localizedDescription)

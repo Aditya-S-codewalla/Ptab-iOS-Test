@@ -29,6 +29,7 @@ struct K {
         static let userIdField = "userId"
         static let familyIdField = "familyId"
         static let userNameField = "userName"
+        static let userDateAdded = "userDateAdded"
     }
     
 }

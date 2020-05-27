@@ -13,5 +13,6 @@ target 'parent-tablet' do
   pod 'GoogleSignIn'
   pod 'FSCalendar'
   pod 'IQKeyboardManager'
+  pod 'Firebase/Messaging'
   
 end

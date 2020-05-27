@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         let db = Firestore.firestore()
-        print(db)
+        print("db id\(db)")
         return true
     }
     
@@ -75,3 +75,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     
 }
 
+extension AppDelegate:MessagingDelegate{
+
+func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+  print("Firebase registration token: \(fcmToken)") }
+
+}
