@@ -20,6 +20,7 @@ class CalendarAndEventsViewController: UIViewController {
     
     let db = Firestore.firestore()
     var events:[Event] = []
+    var eventsForMonth:[Event] = []
     
     var formattedDate: DateFormatter {
         let formatter = DateFormatter()
@@ -73,9 +74,10 @@ class CalendarAndEventsViewController: UIViewController {
     
     func fetchEventsForMonth(_ month:String) {
         if User.shared.userId != nil {
-            db.collection(K.FStore.collectionName).order(by: K.FStore.dateField).whereField(K.FStore.monthField, isEqualTo: month).getDocuments { (querySnapshot, error) in
+            db.collection(K.FStore.collectionName).order(by: K.FStore.dateField).whereField(K.FStore.monthField, isEqualTo: month).addSnapshotListener { (querySnapshot, error) in
                 
-                self.events = []
+                //self.events = []
+                self.eventsForMonth = []
                 
                 if let e = error {
                     print(e.localizedDescription)
@@ -92,12 +94,14 @@ class CalendarAndEventsViewController: UIViewController {
                                 
                                 let newEvent = Event(title: eventTitle, dateString: data[K.FStore.dateStringField] as! String, timeString: timeString, month: eventMonth, creator: eventCreator, dateAdded: data[K.FStore.dateField] as! Double, id: doc.documentID)
                                 
-                                self.events.append(newEvent)
+                                //self.events.append(newEvent)
+                                self.eventsForMonth.append(newEvent)
                                 
                             }
                         }
                         DispatchQueue.main.async {
                             self.eventTable.reloadData()
+                            self.calendar.reloadData()
                         }
                     }
                 
@@ -166,7 +170,14 @@ class CalendarAndEventsViewController: UIViewController {
 }
 
 extension CalendarAndEventsViewController: FSCalendarDataSource {
-    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let dateString = formattedDate.string(from: date)
+        if eventsForMonth.contains(where: { $0.dateString == dateString }) {
+            return 1
+        } else {
+            return 0
+        }
+    }
 }
 
 extension CalendarAndEventsViewController: FSCalendarDelegate {
@@ -186,18 +197,25 @@ extension CalendarAndEventsViewController: FSCalendarDelegate {
 }
 
 extension CalendarAndEventsViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        if toggleFullEventDetails == true {
+            return eventsForMonth.count
+        } else {
+            return events.count
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath)
-        let event = events[indexPath.row]
         
         if toggleFullEventDetails == true {
+            let event = eventsForMonth[indexPath.row]
             cell.textLabel?.text = event.title+" on "+event.dateString+" at "+event.timeString
         } else {
+            let event = events[indexPath.row]
             cell.textLabel?.text = event.title+" at "+event.timeString
         }
         
