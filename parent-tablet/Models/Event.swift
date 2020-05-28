@@ -10,6 +10,8 @@ import Foundation
 struct Event {
     let title:String
     let dateString:String
+    let timeString:String
+    let month:String
     let creator:String
     let dateAdded:Double
     let id:String
@@ -21,6 +23,8 @@ struct Event {
         dict[K.FStore.dateStringField]=self.dateString
         dict[K.FStore.dateField]=self.dateAdded
         dict[K.FStore.eventId]=self.id
+        dict[K.FStore.timeStringField] = self.timeString
+        dict[K.FStore.monthField] = self.month
         return dict
     }
     

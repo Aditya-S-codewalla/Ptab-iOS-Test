@@ -22,6 +22,8 @@ struct K {
         static let creatorField = "creator"
         static let titleField = "title"
         static let dateStringField = "dateString"
+        static let timeStringField = "timeString"
+        static let monthField = "month"
         static let dateField = "dateAdded"
         static let eventId = "id"
         

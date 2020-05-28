@@ -32,7 +32,7 @@ class EventViewController: UIViewController {
             //let writeId = db.collection(K.FStore.collectionName).document().documentID
             let eventId = Auth.auth().currentUser?.uid
             
-            let event = Event(title: eventBody, dateString: dateStr, creator: eventCreator, dateAdded: Date().timeIntervalSince1970, id: eventId!)
+            let event = Event(title: eventBody, dateString: dateStr, timeString: "random time", month: "random month", creator: eventCreator, dateAdded: Date().timeIntervalSince1970, id: eventId!)
             
             db.collection(K.FStore.collectionName).addDocument(data: event.eventDict) { (error) in
                 if let e = error {
@@ -69,7 +69,7 @@ class EventViewController: UIViewController {
                             
                             if let eventCreator = data[K.FStore.creatorField] as? String, let eventTitle = data[K.FStore.titleField] as? String {
                                 
-                                let newEvent = Event(title: eventTitle, dateString: data[K.FStore.dateStringField] as! String, creator: eventCreator, dateAdded: data[K.FStore.dateField] as! Double, id: doc.documentID)
+                                let newEvent = Event(title: eventTitle, dateString: data[K.FStore.dateStringField] as! String, timeString: data[K.FStore.timeStringField] as! String, month: "random month", creator: eventCreator, dateAdded: data[K.FStore.dateField] as! Double, id: doc.documentID)
                                 
                                 self.events.append(newEvent)
                                 

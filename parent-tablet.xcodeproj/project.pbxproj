@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61279330247EE17F0073B47A /* CalendarAndEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6127932F247EE17F0073B47A /* CalendarAndEventsViewController.swift */; };
+		61279332247F2B2C0073B47A /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61279331247F2B2C0073B47A /* EventCreationViewController.swift */; };
 		613BB61A2460591900576644 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BB6192460591900576644 /* User.swift */; };
 		613BB61C24617EF600576644 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BB61B24617EF600576644 /* MessageViewController.swift */; };
 		613BB61F246424C800576644 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613BB61E246424C800576644 /* Util.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		062B112A3DF9A2E539921B26 /* Pods-parent-tablet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parent-tablet.release.xcconfig"; path = "Target Support Files/Pods-parent-tablet/Pods-parent-tablet.release.xcconfig"; sourceTree = "<group>"; };
 		53B3C76DAD6D00EA6B9CEDD1 /* Pods-parent-tablet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-parent-tablet.debug.xcconfig"; path = "Target Support Files/Pods-parent-tablet/Pods-parent-tablet.debug.xcconfig"; sourceTree = "<group>"; };
+		6127932F247EE17F0073B47A /* CalendarAndEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAndEventsViewController.swift; sourceTree = "<group>"; };
+		61279331247F2B2C0073B47A /* EventCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCreationViewController.swift; sourceTree = "<group>"; };
 		613BB6192460591900576644 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		613BB61B24617EF600576644 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		613BB61E246424C800576644 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				61B8B4AE2459D50200391587 /* EmailViewController.swift */,
 				613BB61B24617EF600576644 /* MessageViewController.swift */,
 				61C42A592473116700787A23 /* DynamicLinkViewController.swift */,
+				6127932F247EE17F0073B47A /* CalendarAndEventsViewController.swift */,
+				61279331247F2B2C0073B47A /* EventCreationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				616225FF24584E950018BF57 /* ContactStruct.swift in Sources */,
 				61BF4C78244EE436000D11EB /* AppDelegate.swift in Sources */,
 				61BF4C7A244EE436000D11EB /* SceneDelegate.swift in Sources */,
+				61279330247EE17F0073B47A /* CalendarAndEventsViewController.swift in Sources */,
 				613BB61A2460591900576644 /* User.swift in Sources */,
 				61B8B4AF2459D50200391587 /* EmailViewController.swift in Sources */,
 				616225FD24584DB40018BF57 /* ContactsDisplayController.swift in Sources */,
@@ -331,6 +338,7 @@
 				613BB61C24617EF600576644 /* MessageViewController.swift in Sources */,
 				61BF4C96244EEFD1000D11EB /* CalendarViewController.swift in Sources */,
 				61BF4C90244EE7F3000D11EB /* RegisterViewController.swift in Sources */,
+				61279332247F2B2C0073B47A /* EventCreationViewController.swift in Sources */,
 				61C42A5A2473116700787A23 /* DynamicLinkViewController.swift in Sources */,
 				61BF4C9E244EFA25000D11EB /* Constants.swift in Sources */,
 			);
