@@ -44,6 +44,8 @@ class CalendarAndEventsViewController: UIViewController {
         formatter.dateFormat = "MMM"
         return formatter
     }
+    
+    var toggleFullEventDetails: Bool = true
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,12 +172,14 @@ extension CalendarAndEventsViewController: FSCalendarDataSource {
 extension CalendarAndEventsViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         dateString = formattedDate.string(from: date)
+        toggleFullEventDetails = false
         loadEventsForSelectedDate()
     }
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         let calendarCurrentPageDate = calendar.currentPage
         let changedMonth = monthExtractor.string(from: calendarCurrentPageDate)
+        toggleFullEventDetails = true
         
         fetchEventsForMonth(changedMonth)
     }
@@ -187,10 +191,16 @@ extension CalendarAndEventsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath)
         let event = events[indexPath.row]
-        //cell.detailTextLabel?.text = event.title
-        cell.textLabel?.text = event.title+" at "+event.timeString
+        
+        if toggleFullEventDetails == true {
+            cell.textLabel?.text = event.title+" on "+event.dateString+" at "+event.timeString
+        } else {
+            cell.textLabel?.text = event.title+" at "+event.timeString
+        }
+        
         return cell
     }
     
